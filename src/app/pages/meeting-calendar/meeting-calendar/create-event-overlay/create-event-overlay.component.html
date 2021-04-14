@@ -1,0 +1,99 @@
+<div class="create-event-container">
+  <header class="relative">
+    <h3 class="text-center">{{eventId ? 'Редактировать событие' : 'Новое событие'}}</h3>
+    <i (click)="ref.close()" class="ak ak-close"></i>
+  </header>
+
+  <hr/>
+  <form [formGroup]="form">
+    <div class="time-control-box flex ai-ctr jc-sb">
+      <div class="title-box">
+        <div class="control-title ghost-compensation"></div>
+        <span class="title">ВРЕМЯ</span>
+      </div>
+      <div class="controls flex jc-sb">
+        <div class="start-controls">
+          <span class="control-title">дата и время начала</span>
+          <div class="date-time flex">
+            <div class="relative date">
+              <p-calendar [locale]="options"
+                          [selectOtherMonths]="true"
+                          dateFormat="ddMMyy.г"
+                          formControlName="startDate">
+              </p-calendar>
+              <i class="ak ak-calendar"></i>
+            </div>
+            <label class="relative time">
+              <input type="time" formControlName="startTime" min="8" max="19">
+              <i class="ak ak-down-array"></i>
+            </label>
+          </div>
+        </div>
+        <div class="decor flex fd-col jc-ctr ai-ctr">
+          <div class="control-title ghost-compensation"></div>
+          <div>—</div>
+        </div>
+        <div class="end-controls">
+          <span class="control-title">дата и время окончания</span>
+          <div class="date-time">
+            <div class="relative date">
+              <p-calendar [locale]="options"
+                          [selectOtherMonths]="true"
+                          dateFormat="ddMMyy.г"
+                          formControlName="endDate">
+              </p-calendar>
+              <i class="ak ak-calendar"></i>
+            </div>
+            <label class="relative time">
+              <input type="time" formControlName="endTime">
+              <i class="ak ak-down-array"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--    <div class="is-important-box flex ai-ctr jc-sb">-->
+<!--      <div class="title-box"></div>-->
+<!--      <div class="check-box flex ai-ctr">-->
+<!--        <input class="pointer" id="isImportant" formControlName="isImportant" type="checkbox">-->
+<!--        <label class="pointer" for="isImportant">Это важное событие</label>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="is-important-box flex jc-sb ai-ctr">-->
+<!--      <div class="title-box">-->
+<!--        <span class="title">ПРИГЛАСИТЬ</span>-->
+<!--      </div>-->
+<!--      <div class="message-box">-->
+<!--        <div class="buttons-wrapper">-->
+<!--          <button style="margin: 0" (click)="openSelectUsers()">Список сотрудников</button>-->
+<!--          <div *ngIf="usersSelectedLength">приглашено сотрудников: {{usersSelectedLength}}</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="event-message flex jc-sb" style="margin-top: 3rem;">
+      <div class="title-box">
+        <span class="title description">ОПИСАНИЕ</span>
+      </div>
+      <div class="message-box">
+        <label>
+          <textarea formControlName="description" cols="30" rows="10"></textarea>
+        </label>
+      </div>
+    </div>
+  </form>
+
+  <hr class="bottom"/>
+
+  <div class="buttons-wrapper flex jc-ctr">
+    <button class="save"
+            (click)="createEvent()"
+            style="color: #fff!important;"
+            [disabled]="form.invalid">
+      {{eventId ? 'Обновить' : 'Создать'}}
+    </button>
+    <button (click)="ref.close()">Отменить</button>
+  </div>
+</div>

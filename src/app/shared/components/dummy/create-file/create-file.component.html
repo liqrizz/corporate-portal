@@ -1,0 +1,19 @@
+<h2 class="title">Создать файл</h2>
+
+<div class="a-kor-inp-wrapper link-input-wrapper flex fd-col-rev">
+  <input id="url" type="text" [(ngModel)]="fileName" class="a-kor-input">
+  <label style="transform: translateY(0) scale(0.85)" for="url" class="form-title">Название файла</label>
+</div>
+
+<input style="display: none" #fileInput type="file" id="file" (change)="handleFileInput($event.target.files)"
+       class="a-kor-input">
+
+<div class="a-kor-inp-wrapper flex ai-ctr">
+  <button (click)="fileInput.click()">Добавить файл</button>
+  <span style="font-size: 1.5rem; font-weight: 500">{{file ? 'выбран' : ''}}</span>
+</div>
+
+<div class="buttons-wrapper flex jc-ctr">
+  <button class="save" (click)="create()" style="margin-right: 0.5rem">Сохранить</button>
+  <button (click)="ref.close()">Отменить</button>
+</div>

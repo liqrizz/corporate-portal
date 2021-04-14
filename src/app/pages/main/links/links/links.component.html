@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <h3>Быстрые ссылки</h3>
+  <div class="links flex flex-wrap">
+    <div class="link-item flex jc-center fd-col ai-ctr" *ngFor="let link of linksItems">
+      <div class="img-wrapper flex jc-ctr ai-ctr">
+        <a class="" target="_blank"
+           style="color: #02344F"
+           [href]="link.url">
+          <i class="ak ak-open-link"></i>
+        </a>
+        <em class="ak ak-close" (click)="delete(link.id)"></em>
+      </div>
+      <div class="flex jc-ctr">
+        <span class="link-title">{{link.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="button-container flex jc-ctr">
+  <button class="create-button" (click)="createLink()">Добавить ссылку</button>
+</div>

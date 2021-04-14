@@ -1,0 +1,204 @@
+@import "src/assets/styles/variables";
+
+.base-header-style {
+  color: #B8C1CC;
+  font-size: 1.55rem;
+  text-align: left;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+:host ::ng-deep {
+  height: inherit;
+  .fc .fc-timegrid-col.fc-day-today {
+    background-color: white;
+    border: none!important;
+  }
+
+  .fc-daygrid-day-events:after {
+    content: 'Событие';
+    @extend .base-header-style;
+  }
+
+  .fc-daygrid-day-events {
+    padding-left: 3rem;
+    margin-bottom: 0!important;
+    min-height: 0!important;
+  }
+
+  .fc .fc-timegrid-slot-minor {
+    border: none!important;
+  }
+
+  .fc-media-screen .fc-timegrid-event {
+    border-radius: 5px;
+  }
+
+  span.fc-timegrid-axis-cushion {
+    @extend .base-header-style;
+  }
+
+  .fc .fc-daygrid-day.fc-day-today {
+    background-color: transparent!important;
+    border: none!important;
+  }
+
+  td.fc-timegrid-axis.fc-scrollgrid-shrink {
+    border: none!important;
+    padding-right: 2rem!important;
+  }
+
+  .fc-timegrid-col-events {
+    width: 99%;
+  }
+
+  .fc-event-main {
+    padding-left: 2rem!important;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  span.date-from-template {
+    margin-right: 1.5rem;
+  }
+
+  .fc-direction-ltr .fc-timegrid-col-events {
+    margin: 0 5% 0 5px;
+  }
+
+  td.fc-timegrid-slot.fc-timegrid-slot-label {
+    vertical-align: baseline!important;
+    border: none!important;
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .fc .fc-timegrid-axis-frame {
+    overflow: visible;
+  }
+
+  .fc-scroller {
+    overflow: visible;
+  }
+
+  .fc .fc-scroller-harness {
+    overflow-x: visible;
+  }
+
+  .fc .fc-scrollgrid-liquid {
+    border: none!important;
+  }
+
+  table.fc-scrollgrid.fc-scrollgrid-liquid>tbody>tr.fc-scrollgrid-section:nth-child(2) {
+    display: none;
+  }
+
+  tr.fc-scrollgrid-section.fc-scrollgrid-section-body>td {
+    border: none!important;
+  }
+}
+
+.events-wrapper {
+  height: 100%;
+  padding: 3rem 3rem 0;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header {
+  margin-bottom: 1.3rem;
+}
+
+span.text-from-template i {
+  color: #EB5757;
+}
+
+span.date-from-template i {
+  color: #2179DB;
+}
+
+button.create-button {
+  background: #2F80ED;
+  color: #fff;
+}
+
+h3 {
+  color: $color-primary;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.day-name {
+  color: #6C899E;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.table-wrapper {
+  height: calc(100% - 7rem);
+}
+
+.control-box {
+  display: flex;
+  width: 8rem;
+  min-width: 6.5rem;
+  justify-content: space-between;
+  padding-right: 2rem;
+  align-items: flex-start;
+}
+
+span.text-from-template {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.event-info-box {
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.control-box .ak {
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.event-text {
+  width: 85%;
+  overflow: hidden;
+}
+
+.box-event {
+  width: 90%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+span.date-from-template {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+span.show-more {
+  color: #2179DB;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+span.ak.ak-pen.event-edit {
+  color: #2F80ED;
+}
+
+span.ak.ak-close.event-delete {
+  color: #EB5757;
+}

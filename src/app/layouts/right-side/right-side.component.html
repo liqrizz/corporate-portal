@@ -1,0 +1,19 @@
+<div style="margin-bottom: 2rem">
+  <app-calendar [eventDates]="eventDatesMap" (dateChanged)="onDateChanged($event)"></app-calendar>
+</div>
+<div class="task-container scroll">
+  <div class="task" *ngFor="let item of events" [ngClass]="date.parse(item.endTime) < timeNow ? 'important' :'simple'">
+    <div class="task-header-wrapper" >
+      <div class="task-header">
+        <span class="ak ak-calendar"></span>{{item.startTime | date}} {{item.startTime | date :'HH:mm'}}
+        - {{item.endTime | date: 'HH:mm'}}
+      </div>
+      <div class="task-content" [title]="item.description">
+        {{item.description}}
+      </div>
+    </div>
+    <div class="task-footer">
+      <label>Автор: {{item.userName | initialName}}</label>
+    </div>
+  </div>
+</div>

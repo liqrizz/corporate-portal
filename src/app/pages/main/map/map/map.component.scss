@@ -1,0 +1,82 @@
+:host {
+  height: 100%;
+  display: block;
+
+  ::ng-deep {
+    .a8ba6cc6-7289-473b-87e0-525f8768ffad{
+      fill:#02344f;
+      stroke:#abdfec;
+      stroke-miterlimit:22.93;
+      stroke-width:1.09px;
+    }
+    .branch_name, .fa218835-06bb-4276-b6d4-2decfc86ef37{
+      fill:#fff;
+    }
+    .fa218835-06bb-4276-b6d4-2decfc86ef37{
+      font-size:20px;
+      font-family:MicrosoftSansSerif, Microsoft Sans Serif,serif;
+    }
+    text:not(.clickable), rect:not(.clickable), .branch_name {
+      pointer-events: none;
+    }
+
+    .pointer path {
+      pointer-events: none;
+    }
+    .clickable {
+      cursor: pointer;
+    }
+  }
+}
+
+.map-wrapper {
+  height: inherit;
+  background: white;
+  position: relative;
+  color: #02344F;
+}
+
+.map {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    height: calc(100% - 60px);
+    max-width: calc(100% - 60px);
+    width: 100%;
+  }
+}
+
+h4.map-title {
+  font-size: 2rem;
+}
+
+.total {
+  padding: 3rem;
+  position: absolute;
+}
+
+span.total_count {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+g:hover .a8ba6cc6-7289-473b-87e0-525f8768ffad {
+  fill: #ABDFEC;
+}
+
+path {
+  transition: 0.2s;
+}
+
+g {
+  cursor: pointer;
+}
+
+g:hover .branch_name {
+  fill: #000;
+}

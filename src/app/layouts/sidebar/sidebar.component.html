@@ -1,0 +1,23 @@
+<div class="logo-block">
+  <div class="main-logo">
+    <img src="assets/img/logo.svg" alt="vector-logo">
+  </div>
+</div>
+<div class="user-block">
+  <img src="assets/img/user_image.png" alt="User image">
+  {{userName}}
+</div>
+<nav>
+  <ul>
+    <li *ngFor="let item of menu">
+      <a [routerLink]="item.link" (click)="emmitPage(item)" [ngClass]="{active: activeLink === item.link}">
+        <i [ngClass]="item.iconClass"></i>
+        {{item.header}}
+        <ng-container *ngIf="item.link===activeLink">
+          <div class="space"></div>
+          <i class="ak ak-right-arrow"></i>
+        </ng-container>
+      </a>
+    </li>
+  </ul>
+</nav>

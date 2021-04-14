@@ -1,0 +1,247 @@
+/* You can add global styles to this file, and also import other style files */
+/* Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Mulish:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1700px), (max-height: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+body {
+  background: #e9eaec;
+  font-family: 'Roboto', sans-serif, Arial;
+}
+
+html, body, h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.p-dialog-title {
+  font-size: 1.7rem!important;
+}
+
+.p-dialog-header-close-icon {
+  font-size: 1.7rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input {
+  font-family: 'Roboto', sans-serif, Arial;
+}
+
+input, button {
+  outline: none;
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0.4rem;
+    background-color: #F0F0F0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.4rem;
+    background-color: #738898;
+  }
+}
+
+.p-dialog-draggable {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.jc {
+    &-ctr {
+      justify-content: center;
+    }
+
+    &-sb {
+      justify-content: space-between;
+    }
+  }
+
+  &.fd-col {
+    flex-direction: column;
+  }
+
+  &.fd-col-rev {
+    flex-direction: column-reverse;
+  }
+
+  &.ai {
+    &-ctr {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+  }
+}
+
+em.ak-close {
+  position: absolute;
+  right: -5%;
+  top: -5%;
+  padding: 0.4rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: #EB5757;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    color: #02344f;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.ghost-compensation {
+  display: block;
+  width: 0;
+  color: transparent!important;
+  pointer-events: none;
+
+  &:before {
+    content: '&nbsp;';
+  }
+}
+
+div.selectUser {
+  width: 100%;
+  height: 100%;
+  transform: unset;
+  transition: 0.3s;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.base-wrapper {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.p-dialog-content {
+  overflow-y: hidden!important;
+}
+
+span.title {
+  color: #ACB5BD;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/*Forms*/
+button.create-button {
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  padding: 1rem 3.5rem;
+  color: #02344F;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.1s;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.buttons-wrapper button {
+  font-family: 'Roboto', sans-serif, Arial;
+  background: #ffffff;
+  border: 1px solid #02344F;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  width: 18rem;
+  border-radius: 3px;
+  color: #02344f;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+button.save {
+  background: #02344f!important;
+  color: #ABDFEC!important;
+}
+
+label.form-title {
+  transform: translateY(3rem);
+  transition: 0.2s;
+  pointer-events: none;
+  transform-origin: left;
+}
+
+input.has-value + label {
+  transform: translateY(0) scale(0.85);
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: unset;
+}
+
+.p-toast-summary {
+  font-family: 'Roboto', sans-serif, Arial;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.p-toast-message-content {
+  align-items: center!important;
+}
+
+.p-toast-message-text {
+  display: flex!important;
+  align-items: center!important;
+}
+
+.p-toast {
+  width: auto!important;
+}

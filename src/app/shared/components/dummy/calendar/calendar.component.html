@@ -1,0 +1,15 @@
+<p-calendar [(ngModel)]="selectedDate"
+            [inline]="true"
+            [locale]="options"
+            [selectOtherMonths]="true"
+            [style]="{'width':'100%'}"
+            [inputStyle]="{'width':'100%'}"
+            (ngModelChange)="onChange($event)"
+>
+  <ng-template pTemplate="date" let-date>
+    <div style="position:relative;">
+      <span>{{date.day}}</span>
+      <div *ngIf="eventDates[date.day+'-'+date.month+'-'+date.year]" class="dot"></div>
+    </div>
+  </ng-template>
+</p-calendar>

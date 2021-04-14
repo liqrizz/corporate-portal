@@ -1,0 +1,41 @@
+<div class="events-wrapper">
+  <header class="flex jc-sb ai-ctr">
+    <div class="date-box">
+      <h3 class="selected-date">{{headerDate | date : 'dd MMMM yyyyг.'}}</h3> <br>
+      <span class="day-name">{{headerDate | date : 'EEEE'}}</span>
+    </div>
+    <button class="create-button" (click)="createEvent()">Новое событие</button>
+  </header>
+  <div class="table-wrapper">
+    <full-calendar #calendar [options]="calendarOptions" style="font-size: 1.8rem"></full-calendar>
+  </div>
+</div>
+
+<ng-container #container>
+  <ng-template #template let-title="title" let-time="time" let-isUrgent="isUrgent" let-id="id">
+    <div class="box-event">
+      <div class="event-info-box">
+        <span class="date-from-template">
+          <i class="ak ak-calendar"></i> {{time}}
+        </span>
+
+        <div class="event-text" #eventWrapper>
+          <span class="text-from-template" #eventContent> {{title}}</span>
+          <span *ngIf="eventContent.offsetWidth >= eventWrapper.offsetWidth"
+                (click)="showBasicDialog(time, title)"
+                class="show-more">
+            Подробнее</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-box">
+      <span class="ak ak-pen event-edit" (click)="editEvent(id)"></span>
+      <span class="ak ak-close event-delete" (click)="deleteEvent(id)"></span>
+    </div>
+  </ng-template>
+</ng-container>
+
+<p-dialog [header]="dialogHeader" [(visible)]="displayBasic" [style]="{width: '450px'}" baseZIndex="10000">
+  <p style="word-break: break-all; font-size: 1.7rem;">{{evenText}}</p>
+</p-dialog>

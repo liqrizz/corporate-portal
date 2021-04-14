@@ -1,0 +1,79 @@
+<div class="content">
+  <header>
+    <h3>Все сотрудники по {{regionName | semantic}}</h3>
+  </header>
+  <div class="controls">
+    <div class="counter">
+      <span class="country-icon">
+        <i class="ak ak-KZ" [routerLink]="'/'">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
+      </span>
+      <div class="count-block">
+        <span class="region-name">{{regionName}}</span>
+        <span class="count">{{count}}</span>
+      </div>
+    </div>
+
+    <div class="search-block">
+      <label>
+        <input [formControl]="searchControl"
+          class="search-input" placeholder="Введите ФИО, подразделение, телефон, должность..." type="text">
+      </label>
+    </div>
+
+  </div>
+  <div class="table">
+    <p-table
+      [lazy]="true"
+      [value]="employees"
+      [columns]="cols"
+      [scrollable]="true"
+      [scrollHeight]="pageCount > 1 ? 'calc(100vh - 46rem)' : 'calc(100vh - 40rem)'"
+      [resizableColumns]="true"
+      (onSort)="sort($event)"
+      [customSort]="true">
+      <ng-template pTemplate="colgroup">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns; let i = index" pResizableColumn [ngClass]="col.noSort ? 'no-hover' : null" [pSortableColumn]="col.field" [ngStyle]="{width: col.width  }">
+            {{col.header}}
+            <p-sortIcon *ngIf="!col.noSort" [field]="col.field"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td style="width: 12rem; padding-left: 0">
+            <img class="user-photo" [src]="user.photo" alt="">
+          </td>
+          <td class="name"><span class="fName">{{user.lastName}}</span> <br/> {{user.firstName}} {{user.middleName}}</td>
+          <td class="info">{{user.department}}</td>
+          <td class="info">{{user.division}}</td>
+          <td class="info">{{user.position}}</td>
+          <td class="info contacts" style="white-space: pre">{{user.contacts}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <ul class="paginator" *ngIf="pageCount > 1">
+            <li *ngFor="let item of paginationElements" (click)="setOffset(item)" [ngClass]="item === filter.pageNumber ? 'active' : ''">
+              <span>{{item}}</span>
+            </li>
+          </ul>
+          <p class="empty" *ngIf="employees.length < 1">Пусто</p>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

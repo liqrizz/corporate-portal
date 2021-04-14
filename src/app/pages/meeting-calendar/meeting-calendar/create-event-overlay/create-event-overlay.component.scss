@@ -1,0 +1,186 @@
+:host {
+  font-size: 1.5rem;
+  ::ng-deep {
+    input.p-inputtext {
+      padding: 1.17rem 1rem;
+      font-size: 1.7rem;
+      color: #333;
+      font-weight: 500;
+      border-radius: 4px;
+      outline: none !important;
+      border: 1px solid #ccc !important;
+    }
+
+    .p-inputtext:enabled:focus {
+      box-shadow: none!important;
+    }
+
+    table.p-datepicker-calendar {
+      font-size: 1.4rem;
+    }
+
+    .p-datepicker-header {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+input[type="time"], input[type="date"] {
+  border: 1px solid #ccc;
+  font-size: 1.7rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 1rem;
+  color: #333;
+
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
+}
+
+input[type="time"]::-webkit-clear-button {
+  display: none;
+}
+
+input[type="time"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+span.control-title {
+  color: #ACB5BD;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.title-box {
+  min-width: 13rem;
+}
+
+.check-box {
+  width: 100%;
+}
+
+input[type="time"] {
+  margin-left: 1.8rem;
+}
+
+.decor {
+  margin: 0 2rem;
+}
+
+.message-box textarea, .message-box label {
+  width: 100%;
+}
+
+.message-box {
+  width: 100%;
+}
+
+.message-box textarea {
+  resize: none;
+  height: 14rem;
+  border: 1px solid #DDE2E5;
+  transition: 0.2s;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+}
+
+.message-box textarea:focus {
+  outline: none;
+  border: 1px solid #2196f3;
+  box-shadow: none;
+}
+
+span.title.description {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+input#isImportant {
+  margin-left: 0;
+}
+
+.create-event-container {
+  padding: 3rem;
+}
+
+.is-important-box {
+  margin: 2.7rem 0;
+}
+
+.check-box label {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+h3 {
+  color: #02344F;
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif, arial;
+}
+
+i.ak.ak-close {
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #BDBDBD;
+  top: 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.relative.date i {
+  position: absolute;
+  right: 1rem;
+  font-size: 2.2rem;
+  top: calc(50% - 1.2rem);
+  color: #2179DB;
+  pointer-events: none;
+}
+
+.relative.time i {
+  position: absolute;
+  right: 1.1rem;
+  color: #467fdb;
+  font-size: 2rem;
+  top: calc(50% - 1.3rem);
+  display: flex;
+  background: white;
+  pointer-events: none;
+  width: 2.6rem;
+  height: 2.5rem;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-time {
+  display: flex;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #CDCDCD;
+  margin: 1rem 0 3rem;
+}
+
+hr.bottom {
+  margin-top: 3rem;
+}

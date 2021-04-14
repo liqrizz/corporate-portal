@@ -1,0 +1,45 @@
+<div class="overlay-fixed-block">
+  <header class="flex jc-sb ai-ctr">
+    <img src="assets/img/logo.svg" alt="vector-logo">
+    <h1>Справочник</h1>
+    <i class="ak ak-close" (click)="ref.close()"></i>
+  </header>
+  <div class="overlay-body">
+    <div class="overlay-container">
+      <h3>Список сотрудников </h3>
+      <div class="overlay-content">
+        <div class="search flex jc-ctr ai-ctr">
+          <div class="search-input-wrapper">
+            <label>
+              <input type="text" placeholder="Поиск" [formControl]="searchControl">
+            </label>
+            <button class="flex jc-ctr ai-ctr">
+              <svg class="search" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="9" fill="white" stroke="black" stroke-width="2"/>
+                <line x1="15.7071" y1="17.2929" x2="23.7071" y2="25.2929" stroke="black" stroke-width="2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="user-list flex flex-wrap">
+          <ul class="user-list">
+            <ng-container *ngFor="let user of users; let i = index">
+              <li class="letter"
+                  *ngIf="i==0 || (i!==0 && user.lastName[0]!==users[i-1].lastName[0])">{{user.lastName[0]}}</li>
+              <li>
+                <p-checkbox [label]="user | fullName"
+                            [binary]="true"
+                            [ngModel]="usersSelectedMap[user.id]"
+                            (onChange)="onSelectUser($event, user.id)"></p-checkbox>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-wrapper flex jc-ctr">
+      <button class="save" (click)="onSubmit()">Пригласить</button>
+      <button (click)="ref.close()" style="background: transparent">Отменить</button>
+    </div>
+  </div>
+</div>

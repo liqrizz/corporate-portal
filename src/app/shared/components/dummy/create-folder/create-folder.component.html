@@ -1,0 +1,11 @@
+<h2 class="title">Создать новую папку</h2>
+
+<div class="a-kor-inp-wrapper link-input-wrapper flex fd-col-rev">
+  <input appHasValue id="url" type="text" [(ngModel)]="folderName" class="a-kor-input">
+  <label for="url" class="form-title">Название папки</label>
+</div>
+
+<div class="buttons-wrapper flex jc-ctr">
+  <button class="save" (click)="create()" style="margin-right: 0.5rem">Сохранить</button>
+  <button (click)="ref.close()">Отменить</button>
+</div>

@@ -1,0 +1,149 @@
+:host ::ng-deep {
+  $color-red: #EB5757;
+
+  .p-datepicker {
+    border-radius: 0.8rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .p-datepicker .p-datepicker-header {
+    margin: 1rem 0;
+    justify-content: center;
+    border-bottom: none;
+  }
+
+  .p-datepicker .p-datepicker-header .p-datepicker-title {
+    margin: 0 0.5rem;
+    font-size: 1.6rem;
+    color: $color-red;
+  }
+
+  .p-datepicker table th {
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding: 0.5rem 0.5rem 1rem 0;
+  }
+
+  .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    margin-right: 0;
+  }
+
+  .p-datepicker .p-disabled, .p-component:disabled {
+    opacity: 1;
+  }
+
+  .p-datepicker table td {
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding: 0.2rem;
+  }
+
+  .p-datepicker table td > span {
+    width: 3.3rem;
+    height: 3.3rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .p-datepicker-calendar-container table th, .p-datepicker-calendar-container table td {
+    font-size: 1rem;
+    color: #02344F;
+  }
+
+  .p-datepicker-calendar-container table th:nth-last-child(1), .p-datepicker-calendar-container table th:nth-last-child(2),
+  .p-datepicker-calendar-container table td:nth-last-child(1), .p-datepicker-calendar-container table td:nth-last-child(2),
+  {
+    color: $color-red;
+  }
+
+  .p-datepicker table td > span.p-highlight, .p-datepicker table td.p-datepicker-today > span.p-highlight {
+    background: $color-red;
+    color: #ffffff;
+  }
+
+  .p-datepicker table td.p-datepicker-today > span {
+    background-color: transparent;
+  }
+
+  .p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+    background-color: transparent;
+  }
+
+  .p-datepicker-group-container {
+    width: 100%;
+    margin: 0 1.5rem;
+  }
+
+  .p-datepicker-calendar-container table tbody tr:last-child td {
+    padding-bottom: 1.5rem;
+  }
+
+  .pi-chevron-left:before, .pi-chevron-right:before {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+}
+
+.task {
+  background-color: #EB5757;
+  width: 100%;
+  height: 18rem;
+  padding: 1.1rem;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+
+  &.important {
+    color: #ffffff;
+    background: #EB5757;
+  }
+
+  &.simple {
+    color: #02344F;
+    background: #ABDFEC;
+  }
+
+
+  &-header {
+    color: #02344F;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.5px solid #02344F;
+
+    .ak.ak-calendar {
+      margin-right: 0.5rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &-content {
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+    word-break: break-all;
+    height: 11rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+
+  &-footer {
+    display: flex;
+    color: #02344F;
+    justify-content: space-between;
+  }
+}
+
+.task-container {
+  height: calc(100% - 35.2rem);
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,66 @@
+:host {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+nav.nav {
+  display: flex;
+}
+
+path {
+  transition: 0.1s;
+}
+
+.nav-box {
+  background: white;
+  margin-right: 1rem;
+  flex-basis: 12rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3rem;
+  transition: 0.1s;
+
+  i {
+    font-size: 3.3rem;
+    color: #02344F;
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &.active {
+    box-shadow: none;
+    background: #02344F;
+
+    path {
+      fill: #fff!important;
+    }
+
+    span, i {
+      color: white;
+    }
+  }
+}
+
+.nav-box>svg:first-child {
+  width: auto;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+span.nav-box-title {
+  color: #02344F;
+  font-size: 1.5rem;
+}
+
+svg.anticor-text{
+  height: 1rem;
+  width: auto;
+  margin-top: 0.5rem;
+}

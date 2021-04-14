@@ -1,0 +1,39 @@
+<input #uploadInput
+       type="file"
+       hidden id="file"
+       accept="image/x-png,image/gif,image/jpeg"
+       (change)="handleFileInput($event.target['files'])">
+
+<div class="create-link-container">
+  <header>
+    <h3 class="text-center">Добавление ссылки</h3>
+  </header>
+  <div class="img-control-box flex ai-end">
+    <div class="disable-hover img-wrapper flex jc-ctr ai-ctr" [ngStyle]="{backgroundImage: imgSrc}" [ngClass]="imgSrc ? 'have-img' : ''">
+      <i class="ak ak-open-link" *ngIf="!imgFile"></i>
+    </div>
+    <div class="img-control flex fd-col">
+      <span class="form-title">Картинка</span>
+      <button class="create-button" (click)="uploadInput.click()">Загрузить файл</button>
+    </div>
+  </div>
+  <form [formGroup]="form">
+    <div class="inputs">
+      <div class="a-kor-inp-wrapper flex fd-col-rev">
+        <input appHasValue id="linkName" formControlName="name" type="text" class="a-kor-input">
+        <label for="linkName" class="form-title">Название ссылки</label>
+      </div>
+      <div class="a-kor-inp-wrapper link-input-wrapper flex fd-col-rev">
+        <input appHasValue id="url" type="text" class="a-kor-input" formControlName="url"
+        [ngClass]="form.get('url').invalid && form.get('url').touched ? 'invalid' : ''">
+        <label for="url" class="form-title">Link</label>
+        <i style="position: absolute" class="ak ak-chain"></i>
+      </div>
+    </div>
+  </form>
+
+  <div class="buttons-wrapper flex jc-ctr">
+    <button class="save" (click)="onSubmit()" [disabled]="form.invalid">Сохранить</button>
+    <button (click)="ref.close()">Отменить</button>
+  </div>
+</div>

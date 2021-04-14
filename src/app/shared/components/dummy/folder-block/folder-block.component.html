@@ -1,0 +1,14 @@
+<div class="folders-list">
+  <div class="folder" *ngFor="let item of folders"
+       [ngClass]="item.id===selected.id ? 'active' : ''"
+       (click)="selectFolder(item)">
+    <em class="ak ak-files"></em>
+    {{item.name}}
+    <div class="space"></div>
+    <em class="ak ak-right-arrow"></em>
+  </div>
+</div>
+<div class="flex">
+  <button class="create-button" style="margin-right: 1rem" (click)="onCreateFolder()">Создать папку</button>
+  <button class="create-button" (click)="onCreateFile()">Добавить файл</button>
+</div>

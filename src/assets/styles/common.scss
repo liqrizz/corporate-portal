@@ -1,0 +1,57 @@
+.space {
+  flex: 1 0;
+}
+
+p-toast {
+  z-index: 100000000;
+}
+
+input.search-input {
+  padding: 1.3rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+
+  &::placeholder {
+    color: #BDBDBD;
+  }
+}
+
+button.danger {
+  background: #EB5757;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  transition: 0.1s;
+  padding: 1rem 3rem;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+
+.a-kor-inp-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.a-kor-input {
+  border: none;
+  border-bottom: 1px solid #2f80ed;
+  padding: 0.7rem 0;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+
+.link-input-wrapper {
+  position: relative;
+
+  input {
+    padding-right: 3rem;
+  }
+}
+

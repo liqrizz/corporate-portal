@@ -1,0 +1,11 @@
+<div class="edit-title" [ngClass]="editFolderName ? 'active' : ''" (click)="titleElement.focus()">
+  <input type="text" class="title"
+         [value]="folderName"
+         (input)="onInput($event)"
+         [disabled]="!editFolderName"
+         (keyup.enter)="onEditClicked(titleElement)"
+         #titleElement
+  >
+  <div class="space" *ngIf="editFolderName"></div>
+  <em class="ak ak-pen" (click)="onEditClicked(titleElement)"></em>
+</div>

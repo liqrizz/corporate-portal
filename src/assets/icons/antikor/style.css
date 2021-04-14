@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'antikor-icons';
+  src:  url('fonts/antikor-icons.eot?9sxst4');
+  src:  url('fonts/antikor-icons.eot?9sxst4#iefix') format('embedded-opentype'),
+    url('fonts/antikor-icons.ttf?9sxst4') format('truetype'),
+    url('fonts/antikor-icons.woff?9sxst4') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ak {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'antikor-icons', sans-serif !important;
+  speak: unset;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ak-down-array:before {
+  content: "\e914";
+}
+.ak-fire:before {
+  content: "\e913";
+}
+.ak-left-arrow:before {
+  content: "\e912";
+}
+.ak-calendar:before {
+  content: "\e90a";
+}
+.ak-pen:before {
+  content: "\e90b";
+}
+.ak-download:before {
+  content: "\e90c";
+}
+.ak-close:before {
+  content: "\e90d";
+}
+.ak-chain:before {
+  content: "\e90e";
+}
+.ak-open-link:before {
+  content: "\e90f";
+}
+.ak-drop-down:before {
+  content: "\e910";
+}
+.ak-mail:before {
+  content: "\e911";
+}
+.ak-success-calendar:before {
+  content: "\e900";
+}
+.ak-right-arrow:before {
+  content: "\e901";
+}
+.ak-camera:before {
+  content: "\e902";
+}
+.ak-KZ .path1:before {
+  content: "\e903";
+  color: rgb(2, 52, 79);
+}
+.ak-KZ .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.ak-a-kor:before {
+  content: "\e905";
+}
+.ak-link:before {
+  content: "\e906";
+}
+.ak-files:before {
+  content: "\e907";
+}
+.ak-search:before {
+  content: "\e908";
+}
+.ak-filter:before {
+  content: "\e909";
+}

@@ -1,0 +1,46 @@
+:host {
+  width: 100%;
+  height: calc(100% - 5.4rem);
+
+  ::ng-deep {
+    button.create-button {
+      padding: 1rem;
+      width: 49%;
+    }
+  }
+}
+
+
+.folders-list {
+  height: 100%;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.folder {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  em {
+    font-size: 2rem;
+
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.active {
+    background: #E0E0E0;
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background: #E0E0E0;
+    transition: 0.1s;
+    cursor: pointer;
+  }
+}

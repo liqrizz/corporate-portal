@@ -1,0 +1,46 @@
+@import "src/assets/styles/variables";
+@import "general";
+:host {
+  height: 100%;
+  display: block;
+}
+
+.wrapper {
+  background: white;
+  height: calc(100% - 6rem);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  .links {
+    height: calc(100% - 7.5rem);
+    padding-bottom: 1.5rem;
+    overflow-y: auto;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+h3 {
+  text-align: center;
+  display: block;
+  padding: 3rem 0;
+  font-size: 2.5rem;
+  color: $color-primary;
+  margin-bottom: -1.5rem;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.link-item {
+  flex-basis: 14.2857142857%;
+  padding: 1.5rem;
+}
+
+.link-title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.button-container {
+  z-index: 33;
+}

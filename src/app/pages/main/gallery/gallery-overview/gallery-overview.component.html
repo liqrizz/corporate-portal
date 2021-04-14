@@ -1,0 +1,25 @@
+<div class="folders-wrapper">
+  <app-folder-block [selected]="selectedFolder"
+                    [folders]="folders"
+                    [folderType]="folderType"
+                    (fileCreated)="onFileCreated()"
+                    (folderSelected)="onFolderSelected($event)"
+                    (folderCreated)="onFolderCreated()"
+  ></app-folder-block>
+</div>
+<div class="gallery-block">
+  <div class="header">
+    <app-title-change [folderName]="selectedFolder?.name" (titleChange)="onTitleChanged($event)"></app-title-change>
+    <div class="space"></div>
+    <button class="danger">Удалить альбом</button>
+  </div>
+  <div class="files-block">
+    <div class="file-item" *ngFor="let item of folderFiles">
+      <div style="width: 9rem; height: 9rem; display: flex; align-items: center">
+        <i class="ak ak-camera" style="font-size: 7rem"></i>
+      </div>
+      <em *ngIf="userName===item.createdBy" class="ak ak-close" (click)="deleteFile(item.id)"></em>
+      <label>{{item.name}}</label>
+    </div>
+  </div>
+</div>

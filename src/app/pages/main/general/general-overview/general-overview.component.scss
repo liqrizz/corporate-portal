@@ -1,0 +1,70 @@
+:host {
+  display: flex;
+  height: 100%;
+
+
+}
+
+.folders-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  width: 28rem;
+  height: 100%;
+}
+
+.files-list {
+  flex: 1 0;
+  background: #ffffff;
+  padding: 1.5rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 31rem;
+    }
+  }
+
+}
+
+.table {
+  height: calc(100% - 5rem);
+  margin-top: 1.5rem;
+  overflow: auto;
+
+  .photo {
+    height: 3.5rem;
+    width: 2.8rem;
+    object-fit: contain;
+  }
+
+  ::ng-deep .pi-sort-alt:before {
+    content: "\e910";
+    font-family: 'antikor-icons', sans-serif;
+  }
+
+  ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    background-color: rgba(171, 223, 236, 0.2);
+    font-size: 1.4rem;
+  }
+
+  ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    word-break: break-word;
+    font-size: 1.3rem;
+  }
+
+  //rgba(171, 223, 236, 0.2);
+}
+
+.type-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: #EB5757;
+    cursor: pointer;
+  }
+}

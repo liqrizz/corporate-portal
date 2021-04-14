@@ -1,0 +1,54 @@
+<div class="folders-wrapper">
+  <app-folder-block [folders]="folders"
+                    [folderType]="folderType"
+                    [selected]="selectedFolder"
+                    (folderSelected)="onFolderSelected($event)"
+                    (folderCreated)="onFolderCreated()"
+                    (fileCreated)="onFileCreated()"></app-folder-block>
+</div>
+<div class="files-list">
+  <div class="header">
+    <app-title-change [folderName]="selectedFolder?.name" (titleChange)="folderChanged($event)">
+    </app-title-change>
+    <div class="space"></div>
+    <input class="search-input" placeholder="Введите название файла..." [formControl]="searchControl" type="text">
+    <button class="danger" style="white-space: pre; margin-left: 1rem">Удалить папку</button>
+  </div>
+
+  <div class="table">
+    <p-table [value]="data" [columns]="cols" (onLazyLoad)="onLazyLoad($event)" [lazy]="true">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th scope="col" *ngFor="let col of columns" [ngClass]="col.noSort ? 'no-hover' : null"
+              [pSortableColumn]="col.field" [ngStyle]="{width: col.width  }">
+            <div class="flex">
+              {{col.header}}
+              <div class="space"></div>
+              <p-sortIcon *ngIf="!col.noSort" [field]="col.field"></p-sortIcon>
+            </div>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td style="padding: 0 0.5rem">
+            <img [src]="'assets/img/docFiles/'+(row.fileType | defineFileType)" alt="" class="photo">
+          </td>
+          <td style="cursor: pointer" (click)="downloadFile(row)">{{row.name}}</td>
+          <td>{{row.createdBy}}</td>
+          <td style="text-transform: uppercase">{{row.createdOn | date :'ddMMMyyyy HH:mm:ss'}}</td>
+          <td>
+            <div class="type-col">{{row.fileType}}       <span *ngIf="userName===row.createdBy"
+                                                               class="ak ak-close" (click)="deleteFile(row.id)"></span>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5" class="empty-message" style="text-align: center">Нет данных</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
